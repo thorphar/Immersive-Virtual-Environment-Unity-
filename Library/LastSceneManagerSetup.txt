@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/vinst/Documents/unity projects/2.5d test/Assets/main.unity
+- path: Assets/Scenes/Main.unity
   isLoaded: 1
   isActive: 1

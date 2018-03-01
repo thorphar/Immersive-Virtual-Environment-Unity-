@@ -28,9 +28,30 @@ public class CameraBehaviourScript : MonoBehaviour {
     public float frameCounter = 20;
 
     Quaternion originalRotation;
+    Quaternion originalRotation2;
 
     private GameObject interaction = null;
     public GameObject image;
+
+    public void resetVar(Vector3 rotation)
+    {
+        rotationX = 0F;
+        rotationY = 0F;
+
+        rotArrayX = new List<float>();
+        rotAverageX = 0F;
+
+        rotArrayY = new List<float>();
+        rotAverageY = 0F;
+
+        originalRotation = transform.localRotation;
+        //originalRotation = new Quaternion(transform.localRotation.x+ rotation.x, transform.localRotation.y + rotation.y, transform.localRotation.z + rotation.z, transform.localRotation.w);
+    }
+
+    public void resetOrigRot()
+    {
+        originalRotation = originalRotation2;
+    }
 
     void Update()
     {
@@ -152,6 +173,7 @@ public class CameraBehaviourScript : MonoBehaviour {
         if (rb)
             rb.freezeRotation = true;
         originalRotation = transform.localRotation;
+        originalRotation2 = originalRotation;
     }
 
     public static float ClampAngle(float angle, float min, float max)
