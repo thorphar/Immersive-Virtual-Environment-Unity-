@@ -46,7 +46,7 @@ public class portalColliderTeleport : MonoBehaviour {
 
 		player.transform.position += posConst;
 
-		playerCamera.transform.eulerAngles += rotConst;
+		player.transform.eulerAngles += rotConst;
 		playerCamera.GetComponent<CameraBehaviourScript>().resetVar(rotConst);
 
 		player.transform.localScale += scaleConst;
