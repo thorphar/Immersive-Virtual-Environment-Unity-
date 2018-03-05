@@ -30,14 +30,22 @@ public class FirstPerson : MonoBehaviour
         RotationVertically -= Input.GetAxis("Mouse Y") * MouseSensitvityFactor; // use MouseSensitvityFactor and input value to get roation value
         RotationVertically = Mathf.Clamp(RotationVertically, -ViewableVerticleRange, ViewableVerticleRange); // use clamping to limit to viewable vertical range
         Camera.main.transform.localRotation = Quaternion.Euler(RotationVertically, 0, 0); // set the camera's roation using the rotation value previously set.
-        float forwardTranslationVector = Input.GetAxis("Vertical") * RealMovmentTranslationVector; // Using the builtin inputs for vertical
-        float sideTranslationVector = Input.GetAxis("Horizontal") * RealMovmentTranslationVector; // and horizontal
+
+        float forwardTranslationVector = 0;
+        float sideTranslationVector = 0; 
         if (!PlayerCharacter.isGrounded)
         {
+            forwardTranslationVector = Input.GetAxis("Vertical") * (RealMovmentTranslationVector / 10); // Using the builtin inputs for vertical
+            sideTranslationVector = Input.GetAxis("Horizontal") * (RealMovmentTranslationVector /10); // and horizontal
             TranslationVectorVertical += Physics.gravity.y * Time.deltaTime; // using the phyciscs gravity value with time since previous frame to set the vertical TranslationVector 
-        }
+            if (TranslationVectorVertical < -10) {
+                TranslationVectorVertical = -10;
+            }
+        }   
         else {
-            TranslationVectorVertical = 0;
+            forwardTranslationVector  = Input.GetAxis("Vertical") * RealMovmentTranslationVector; // Using the builtin inputs for vertical
+            sideTranslationVector = Input.GetAxis("Horizontal") * RealMovmentTranslationVector; // and horizontal
+            TranslationVectorVertical = 0; // Stops from applying gravity even when standing on a plane ... really should be 9.81 m/s/s 
         }
         if (PlayerCharacter.isGrounded && Input.GetButtonDown("Jump"))
         { // check if the user is on the ground and if the jump input has been pressed, 
@@ -46,7 +54,6 @@ public class FirstPerson : MonoBehaviour
         }
 
         Vector3 TranslationVector = new Vector3(sideTranslationVector, TranslationVectorVertical, forwardTranslationVector); // finally create a new matrix to apply to the transformation to the character
-
         TranslationVector = transform.rotation * TranslationVector; // applying the roational matrix
         PlayerCharacter.Move(TranslationVector * Time.deltaTime); // move the character using above multipled matrix
 
