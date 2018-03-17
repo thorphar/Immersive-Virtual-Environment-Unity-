@@ -8,9 +8,9 @@ public class endoftube : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "FallingObject") {
-            Destroy(other);
+			Destroy(other.gameObject);
         }
-        other.transform.position = new Vector3(-8.46f, 11.78f, -2.5f);
+        other.transform.position = new Vector3(-8.46f, 50f, -2.5f);
     }
 
 }
