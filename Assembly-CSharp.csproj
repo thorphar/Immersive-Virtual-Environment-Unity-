@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\playerBehavoiur.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\portalColliderTeleport.cs" />
+     <Compile Include="Assets\Scripts\walkingnoise.cs" />
      <None Include="Assets\Shaders\DepthMask.shader" />
      <None Include="Assets\Shaders\PortalShader.shader" />
      <None Include="Assets\Shaders\KickOutHole.shader" />

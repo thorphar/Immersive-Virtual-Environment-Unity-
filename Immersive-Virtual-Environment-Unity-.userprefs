@@ -1,12 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/topoftube.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/walkingnoise.cs">
     <Files>
-      <File FileName="Assets/Scripts/topoftube.cs" Line="39" Column="1" />
-      <File FileName="Assets/Scripts/FirstPerson.cs" Line="25" Column="28" />
-      <File FileName="Assets/modles/fallingobjects/SpeedLimiting.cs" Line="28" Column="18" />
-      <File FileName="Assets/Scripts/endoftube.cs" Line="9" Column="6" />
-      <File FileName="Assets/modles/fallingobjects/gravity.cs" Line="21" Column="3" />
+      <File FileName="Assets/Scripts/walkingnoise.cs" Line="31" Column="28" />
+      <File FileName="Assets/Scripts/fallingscene/topoftube.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FirstPerson.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/fallingscene/antigravity.cs" Line="7" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
