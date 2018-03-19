@@ -10,10 +10,12 @@ public class FirstPerson : MonoBehaviour
     public float RealMovmentTranslationVector = 4.0f;
     public float ViewableVerticleRange = 65.0f;
     public float MouseSensitvityFactor = 3.8f;
+    private Animator playerAnimator;
 
     void Start()
     {
         Cursor.visible = false; // used to remove the cursor for screen
+        playerAnimator = gameObject.GetComponentInChildren<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -56,6 +58,27 @@ public class FirstPerson : MonoBehaviour
         Vector3 TranslationVector = new Vector3(sideTranslationVector, TranslationVectorVertical, forwardTranslationVector); // finally create a new matrix to apply to the transformation to the character
         TranslationVector = transform.rotation * TranslationVector; // applying the roational matrix
         PlayerCharacter.Move(TranslationVector * Time.deltaTime); // move the character using above multipled matrix
+
+        if (Mathf.Sqrt(Mathf.Pow(PlayerCharacter.velocity.x,2) + Mathf.Pow(PlayerCharacter.velocity.z,2)) > 0)
+        {
+            playerAnimator.SetBool("walking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("walking", false);
+        }
+        if (PlayerCharacter.velocity.z < 0)
+        {
+            playerAnimator.SetBool("backwards", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("backwards", false);
+
+        }
+        Vector3 relativeVelocity = transform.InverseTransformDirection(PlayerCharacter.velocity);
+        Debug.Log(relativeVelocity.z);
+
 
     }
 }
