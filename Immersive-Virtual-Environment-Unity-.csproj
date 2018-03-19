@@ -282,29 +282,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\modles\fallingobjects\gravity.cs" />
     <Compile Include="Assets\modles\fallingobjects\SpeedLimiting.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
+=======
+>>>>>>> bc17e5b5ad615b16d778004840d4dc5fe492f9f5
     <Compile Include="Assets\Scripts\CameraBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\CameraSnapshot.cs" />
     <Compile Include="Assets\Scripts\CameraViewPlane.cs" />
     <Compile Include="Assets\Scripts\CamMatrixControl.cs" />
     <Compile Include="Assets\Scripts\ClockBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\doorcamerabehaviour.cs" />
-    <Compile Include="Assets\Scripts\endoftube.cs" />
+    <Compile Include="Assets\Scripts\fallingscene\antigravity.cs" />
+    <Compile Include="Assets\Scripts\fallingscene\CamController.cs" />
+    <Compile Include="Assets\Scripts\fallingscene\changePlayerLayer.cs" />
+    <Compile Include="Assets\Scripts\fallingscene\endoftube.cs" />
+    <Compile Include="Assets\Scripts\fallingscene\gravity.cs" />
+    <Compile Include="Assets\Scripts\fallingscene\SpeedLimiting.cs" />
+    <Compile Include="Assets\Scripts\fallingscene\topoftube.cs" />
     <Compile Include="Assets\Scripts\FirstPerson.cs" />
     <Compile Include="Assets\Scripts\impossibleCube.cs" />
-    <Compile Include="Assets\Scripts\lightingdarkness.cs" />
     <Compile Include="Assets\Scripts\playerBehavoiur.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\portalColliderTeleport.cs" />
-    <Compile Include="Assets\Scripts\topoftube.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Materials\KickOutHole.shader" />
     <None Include="Assets\Materials\impossicube1.shader" />
+    <None Include="Assets\Scripts\fallingscene\speed.txt" />
+    <None Include="Assets\Shaders\Ball.shader" />
+    <None Include="Assets\Shaders\DepthMask.shader" />
+    <None Include="Assets\Shaders\KickOutHole.shader" />
     <None Include="Assets\Shaders\PortalShader.shader" />
-    <None Include="Assets\modles\fallingobjects\speed.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
